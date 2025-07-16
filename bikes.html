@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bike Rental - Available Bikes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1647950716841-db94efed267f?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 40px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    #page-title {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: slideDown 1s ease-out;
+    }
+
+    .bike-card {
+      background-color: rgba(0,0,0,0.6);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      animation: fadeInUp 1s ease-in;
+    }
+
+    .bike-card h3 {
+      margin-top: 0;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideDown {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <h2 id="page-title">Available Bikes for Rent</h2>
+
+  <div class="bike-card" id="bike-mountain">
+    <h3 id="bike-mountain-title">Mountain Bike</h3>
+    <p id="bike-mountain-price">Price: ₹2500/day</p>
+    <p id="bike-mountain-features">Features: Gear system, durable tires</p>
+  </div>
+
+  <div class="bike-card" id="bike-electric">
+    <h3 id="bike-electric-title">Electric Scooter</h3>
+    <p id="bike-electric-price">Price: ₹700/day</p>
+    <p id="bike-electric-features">Features: Battery powered, eco-friendly</p>
+  </div>
+
+  <div class="bike-card" id="bike-road">
+    <h3 id="bike-road-title">Road Bike</h3>
+    <p id="bike-road-price">Price: ₹1200/day</p>
+    <p id="bike-road-features">Features: Lightweight, fast speed</p>
+  </div>
+</body>
+</html>
