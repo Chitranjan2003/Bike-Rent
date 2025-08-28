@@ -31,7 +31,7 @@
       border-radius: 10px;
     }
 
-    #alert-button, #register-button {
+    #alert-button, #register-button, #confirm-button, #prompt-button {
       padding: 12px 24px;
       margin: 10px;
       font-size: 18px;
@@ -44,8 +44,16 @@
       transition: background-color 0.3s ease;
     }
 
-    #alert-button:hover, #register-button:hover {
+    #alert-button:hover, #register-button:hover, #confirm-button:hover, #prompt-button:hover {
       background-color: #2980b9;
+    }
+
+    #prompt-message {
+      font-size: 22px;
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 8px;
     }
 
     @keyframes fadeIn {
@@ -66,6 +74,24 @@
     function goToRegister() {
       window.location.href = "registration.html";
     }
+
+    function showConfirmBox() {
+      const userConfirmed = confirm("Are you sure you want to proceed?");
+      if (userConfirmed) {
+        alert("You clicked OK!");
+      } else {
+        alert("You clicked Cancel!");
+      }
+    }
+
+    function showPromptBox() {
+      const name = prompt("Please enter your name:");
+      if (name) {
+        document.getElementById("prompt-message").textContent = `Hello ${name}, How are you today?`;
+      } else {
+        document.getElementById("prompt-message").textContent = "";
+      }
+    }
   </script>
 </head>
 <body>
@@ -73,7 +99,12 @@
   <p id="intro-paragraph">
     Discover the freedom of the road with our premium bike rental service. Whether you're exploring the city or heading out on an adventure, we offer a wide range of bikes to suit your style and needs. Register now and start your journey with us!
   </p>
+  
   <button id="alert-button" onclick="showWelcomeAlert()">Show Alert</button>
   <button id="register-button" onclick="goToRegister()">Register</button>
+  <button id="confirm-button" onclick="showConfirmBox()">Confirm</button>
+  <button id="prompt-button" onclick="showPromptBox()">Prompt Alert</button>
+
+  <p id="prompt-message"></p>
 </body>
 </html>
